@@ -105,12 +105,10 @@ health_and_wellness_planner_agent/
 │   ├── workout_recommender.py
 │
 ├── context.py                    # Shared context (UserSessionContext, RunContextWrapper)
-├── hooks.py                      # Custom hooks for agent/tool behavior
-├── utils/                        # Streaming, logging, and helper functions
+├── utils/streamin.py             # Streaming, logging, and helper functions
 │
 ├── main.py                       # CLI entry point
 ├── .env                          # API Key (never commit this)
-├── requirements.txt              # All Python dependencies
 └── README.md                     # This file
 ```
 
