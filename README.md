@@ -1,17 +1,18 @@
-# 🧠 Health & Wellness Planner Agent (CLI Version)
+# 🧠 Health & Wellness Planner Agent (CLI Version + Chainlit)
 
-A smart and friendly **Command-Line AI assistant** that helps you define health goals, plan meals, recommend workouts, schedule check-ins, and track progress — all in one seamless interaction.  
+A smart and friendly **AI Assistant** that helps you define health goals, plan meals, recommend workouts, schedule check-ins, and track progress — all in one seamless interaction.  
 Built with ❤️ using the **OpenAI Agents SDK**.
 
 ---
 
 ## 🚀 Features
-
+### Tools: 
 - ✅ **Goal Analyzer** – Parses natural language goals (e.g., _"I want to lose 2 kg in 1 month"_)
 - 🥗 **Meal Planner** – Diet plans for various preferences (vegetarian, keto, balanced, high protein.)
 - 🏃 **Workout Recommender** – 7-day custom workout plans for beginner, intermediate, or advanced levels
 - ⏰ **Check-in Scheduler** – Weekly check-in scheduling with reminders
 - 📊 **Progress Tracker** – Logs updates like weight, diet logs, and progress milestones
+### Agents:
 - 🩹 **Injury Support Agent** – Suggests safe workouts when injured
 - 🧑‍⚕️ **Nutrition Expert Agent** – Provides dietary advice for medical or special needs
 - 🆘 **Escalation Agent** – Escalates serious or sensitive health concerns to a human coach
