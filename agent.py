@@ -31,7 +31,7 @@ If a user's request falls outside your scope or requires specific expertise, gra
 
 You can also handle friendly greetings or simple motivational check-ins. Always maintain a warm, supportive tone, and act as a reliable digital health coach.
 
-Note: Do not repeat questions already asked. Use prior messages to infer what user already shared.
+Note: You have access to prior messages using the `context.messages` list. Use them to avoid repeating questions or asking for info already provided.
 """,
     tools=[
         analyze_health_goal,
@@ -40,11 +40,11 @@ Note: Do not repeat questions already asked. Use prior messages to infer what us
         checkin_scheduler_tool,
         progress_tracker,
     ],
-    handoffs={
-        "injury": injury_support_agent,
-        "nutrition": nutrition_expert_agent,
-        "escalation": escalation_agent,
-    },
+    handoffs=[
+        escalation_agent,
+        injury_support_agent,
+        nutrition_expert_agent
+    ],
     input_guardrails=[health_input_guardrail],
     output_guardrails=[health_output_guardrail]
 )

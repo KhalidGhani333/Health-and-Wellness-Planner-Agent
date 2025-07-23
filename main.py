@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 from agents.run import RunConfig
 import asyncio, os
 from utils.streaming import stream_response
+from agents import InputGuardrailTripwireTriggered,OutputGuardrailTripwireTriggered
 
 load_dotenv()
 set_tracing_disabled(disabled=True)
@@ -45,12 +46,17 @@ async def main():
 
         result = Runner.run_streamed(
             health_planner_agent,
-            prompt,
+            user_context.messages,
             context=user_context,
             run_config=config)
         
         # Use the streaming handler
-        await stream_response(result, user_context)
+        try:
+            await stream_response(result, user_context)
+        except InputGuardrailTripwireTriggered:
+            print("❌ Sorry, your message isn't related to health & wellness. Please try asking something health-related.")
+        except OutputGuardrailTripwireTriggered as e:
+            print("Health Wellness Agent output tripped :", e)
 
         #  Save assistant reply
         user_context.messages.append({"role": "assistant", "content": result.final_output})

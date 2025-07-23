@@ -58,14 +58,20 @@ pip install -r requirements.txt
 ---
 ## 4. Add Environmental Variable
 Create a .env file in the root of the project:
-ini
-OPENAI_API_KEY=your-api-key-here
+
+OPENAI_API_KEY=your-api-key-here , 
 GEMINI_API_KEY = your-api-key-here
 --
 ### ▶️ Run the Agent (CLI)
 ```bash
-python main.py
+uv run main.py
 ```
+
+### ▶️ Run the Agent in Browser by Chainlit
+```bash
+uv run chainlit run chainlit_main.py
+```
+
 ## 💬 Example Conversation
 ```pgsql
 🧠 Welcome to your Health & Wellness Planner!
@@ -106,7 +112,7 @@ health_and_wellness_planner_agent/
 │
 ├── context.py                    # Shared context (UserSessionContext, RunContextWrapper)
 ├── utils/streamin.py             # Streaming, logging, and helper functions
-│
+├── chainlit_main.py.py           # Agent run in the Browser 
 ├── main.py                       # CLI entry point
 ├── .env                          # API Key (never commit this)
 └── README.md                     # This file
